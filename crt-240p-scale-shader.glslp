@@ -1,0 +1,6 @@
+shaders = "1"
+feedback_pass = "0"
+shader0 = "crt-240p-scale-shader.glsl"
+filter_linear0 = "true"
+wrap_mode0 = "clamp_to_edge"
+mipmap_input0 = "false"
