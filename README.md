@@ -209,11 +209,6 @@ input lag, overclocking, USB sound cards, turbo fire, BIOS files, backups, etc.
 
 ## TODO / Limitations
 
-- Support for PAL Plus / PAL60 might be interesting. The 288p resolution would be a
-perfect 2X for various 144p handhelds and the extra 48 lines of vertical resolution would
-help with displaying TATE games on a 4:3 screen. Unfortunately, as far as I know, the
-Raspberry Pi's [limited choices for the pixel clock](https://github.com/raspberrypi/firmware/issues/734)
-do not allow for a 288p@60Hz resolution
 - Vertical downscaling could probably use something better than the simple tent +
 sharpening combination
 - Using a single resolution will never correctly accommodate arcade games running at
