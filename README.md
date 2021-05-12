@@ -75,7 +75,7 @@ same time and can introduce a loss of sharpness and brightness in small features
 axis where it isn't even required.
 - **160x144** -
 Handheld resolutions like these can only be properly displayed by centering them
-on-screen. One complication is that many handhelds do not have square pixels. Time to
+on-screen. One complication is that some handhelds do not have square pixels. Time to
 pull out the calculator to find the correct image width and on-screen X/Y offsets.
 - **256x224** -
 There is no way to make this horizontal resolution look good with our chosen output
@@ -209,14 +209,18 @@ input lag, overclocking, USB sound cards, turbo fire, BIOS files, backups, etc.
 
 ## TODO / Limitations
 
-- Vertical downscaling could probably use something better than the simple tent +
-sharpening combination
+- Game Gear has the wrong aspect ratio as we cannot distinguish it from the GB(C) by the
+resolution alone
+- There are going to be some unusual arcade games that have resolutions or screen setups
+that are not properly handled by this shader (...but adding special case support is
+straightforward)
 - Using a single resolution will never correctly accommodate arcade games running at
 wildly varying refresh rates and scaling on the horizontal axis will not be pixel-perfect
-for most systems (not that big of a deal on a typical consumer CRT TV)
-- There are going to be some unusual arcade games that have resolutions or screen
-setups that are not properly handled by this shader (...but adding special case support is
-straightforward)
+for most systems (not that big of a deal on a typical consumer CRT TV driven at a super
+resolution)
+- Vertical downscaling could probably use something better than the simple tent +
+sharpening combination
+- Very low-resolution systems like the Lynx could be pixel doubled and still fit into 240p
 
 ## Code
 

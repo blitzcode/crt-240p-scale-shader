@@ -33,18 +33,22 @@ void main()
     // Handheld consoles get centered on the screen and have their correct aspect ratio
     bool is_handheld = true;
     float handheld_ar = 1.0;
-         if (InputSize.x == 160.0 && InputSize.y == 144.0) handheld_ar = 1.09; // GB(C) / GG
+         if (InputSize.x == 160.0 && InputSize.y == 144.0) handheld_ar = 1.11; // GB(C) / GG *
     else if (InputSize.x == 160.0 && InputSize.y == 152.0) handheld_ar = 1.05; // NGP(C)
     else if (InputSize.x == 224.0 && InputSize.y == 144.0) handheld_ar = 1.55; // WonderSwan
-    else if (InputSize.x == 160.0 && InputSize.y == 102.0) handheld_ar = 1.58; // Atari Lynx
-    else if (InputSize.x == 102.0 && InputSize.y == 160.0) handheld_ar = 0.63; // Atari Lynx Vertical *
+    else if (InputSize.x == 160.0 && InputSize.y == 102.0) handheld_ar = 1.57; // Atari Lynx
+    else if (InputSize.x == 102.0 && InputSize.y == 160.0) handheld_ar = 0.64; // Atari Lynx Vertical **
     else if (InputSize.x == 240.0 && InputSize.y == 160.0) handheld_ar = 1.50; // GBA
     else
         is_handheld = false;
-    // * This is a weird special case. Lynx seems to be the only system where vertical
-    //   mode does not rotate the image in post, but the emulator actually outputs a
-    //   different resolution. So it's not treated as a vertical system, is_vertical ==
-    //   false and we simply treat it as a horizontal system having a tall aspect ratio
+    // *  We unfortunately can't distinguish between the Game Gear and the Nintendo
+    //    handhelds, causing the former to have the wrong aspect ratio as it uses
+    //    non-square pixels. Feel free to change the aspect to 1.33 to reverse the
+    //    situation in favor of Sega's system
+    // ** This is a weird special case. Lynx seems to be the only system where vertical
+    //    mode does not rotate the image in post, but the emulator actually outputs a
+    //    different resolution. So it's not treated as a vertical system, is_vertical ==
+    //    false and we simply treat it as a horizontal system having a tall aspect ratio
 
     // Fix for 2 & 3 screen wide Darius games. This is not going to look terribly good but
     // at least they're playable (sort of)
